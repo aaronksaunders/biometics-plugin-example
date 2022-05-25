@@ -1,0 +1,7 @@
+{
+  "name": "fingerauth",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

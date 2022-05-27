@@ -27,18 +27,21 @@ setupIonicReact();
 
 const App: React.FC = () => {
   (async () => {
-    try {
-      const showResp = await FingerprintAIO.show({
-        disableBackup: false,
-        title: "test display",
-      });
+try {
 
-      console.log('Show Response', showResp);
-      const isAvailable = await FingerprintAIO.isAvailable();
-      console.log(isAvailable);
-    } catch (error) {
-      console.log(error);
-    }
+  const isAvailable = await FingerprintAIO.isAvailable();
+  console.log(isAvailable);
+
+  const authResp = await FingerprintAIO.show({
+    disableBackup: false,
+    title: "test biometric auth",
+  });
+  console.log(authResp)
+
+
+} catch (error) {
+  console.log("Error: ", error);
+}
   })();
   return (
     <IonApp>
